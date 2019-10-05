@@ -1,4 +1,11 @@
 # Matterport3D Simulator
+
+**MODIFIED: Faster deployment in the Chinese mainland with tuna and ustc source.**
+
+**本仓库在原来仓库的基础上替换了清华源和中科大源，使得 docker image 的构建更快、更稳定**
+
+---
+
 AI Research Platform for Reinforcement Learning from Real Panoramic Images.
 
 The Matterport3D Simulator enables development of AI **agents that interact with real 3D environments using visual information** (RGB-D images). It is primarily intended for research in deep reinforcement learning, at the intersection of computer vision, natural language processing and robotics.
@@ -58,6 +65,7 @@ We recommend using our [Dockerfile](Dockerfile) to install the simulator. The si
 - Ubuntu 16.04
 - Nvidia GPU with driver >= 384
 - Install [docker](https://docs.docker.com/engine/installation/)
+- Install [docker with tuna source (optional)](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/)
 - Install [nvidia-docker2.0](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))
 - Note: CUDA / CuDNN toolkits do not need to be installed (these are provided by the docker image)
 
@@ -66,7 +74,7 @@ We recommend using our [Dockerfile](Dockerfile) to install the simulator. The si
 Clone the Matterport3DSimulator repository:
 ```
 # Make sure to clone with --recursive
-git clone --recursive https://github.com/peteanderson80/Matterport3DSimulator.git
+git clone --recursive https://github.com/jianjieluo/Matterport3DSimulator
 cd Matterport3DSimulator
 ```
 
@@ -108,6 +116,8 @@ Depth skyboxes are generated from the `undistorted_depth_images` using a simple 
 
 
 ### Building and Testing using Docker
+
+Optional: [Replace dockerhub source with ustc source in China](http://mirrors.ustc.edu.cn/help/dockerhub.html)
 
 Build the docker image:
 ```
